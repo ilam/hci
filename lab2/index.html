@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HCI Lab2 Virtual Keyboard</title>
+	<link href="css/jquery-ui.css" rel="stylesheet">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<link href="css/keyboard.css" rel="stylesheet">
+	<script src="js/jquery.keyboard.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
+	<script src="js/jquery.keyboard.extension-typing.js"></script>
+	<script src="js/jquery.keyboard.extension-autocomplete.js"></script>
+
+	<link href="demo/demo.css" rel="stylesheet">
+	<script src="demo/demo.js"></script>
+	<script src="js/jquery.jatt.min.js"></script> <!-- tooltips -->
+	<script src="demo/jquery.chili-2.2.js"></script> <!-- syntax highlighting -->
+	<script src="demo/recipes.js"></script>
+</head>
+<body>
+<div id="page-wrap">
+	<h3>HCI Lab - Comparison of Keyboard Layouts</h3>
+	<h3>Comparison between QWERTY and DVORAK Keyboard Layouts</h3>
+	<div class="block">
+		<h2>QWERTY Text Area</h2>
+		<textarea class="qwerty"></textarea>
+		<div class="code ui-corner-all">
+			<pre class="html">&lt;!-- HTML --&gt;
+			&lt;textarea class="qwerty"&gt;&lt;/textarea&gt;</pre>
+		<pre class="js">
+		// Script
+		$('.qwerty:eq(2)')
+		 .keyboard({
+		  layout   : 'qwerty',
+		 })
+		 .addTyping();</pre>
+		</div>
+	</div>
+	<br/>
+	<div class="block">
+		<h2>Dvorak</h2>
+		<textarea id="dvorak"></textarea>
+		<div class="code ui-corner-all">
+			<pre class="html">&lt;!-- HTML --&gt;
+		&lt;textarea id="dvorak"&gt;&lt;/textarea&gt;</pre>
+		<pre class="js">
+		// Script
+		$('#dvorak')
+		 .keyboard({ layout: 'dvorak' })
+		 .addTyping();</pre>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
