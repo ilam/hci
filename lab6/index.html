@@ -1,0 +1,57 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Sortable - Connect lists</title>
+  <link rel="stylesheet" href="jquery-ui.css" />
+  <script src="jquery-1.8.3.js"></script>
+  <script src="jquery-ui.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  #s1, #s2, #s3 { list-style-type: none; margin: 0; padding: 0 0 2.5em; float: left; margin-right: 10px; }
+  #s1 li, #s2 li,#s3 li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; width: 120px; }
+  </style>
+  <script>
+  $(function() {
+    $( "#s1, #s2, #s3" ).sortable({
+	  items:":not(.locked)",
+      connectWith: ".connectedSortable",
+	  update : function () 
+        { 
+		var order = $('#s1').sortable('serialize')+"&"+$('#s2').sortable('serialize'); 
+		console.log(order);
+                $("#menulist").load("getdata.php?"+order); 
+        } 
+	  
+	  
+    });
+  });
+  </script>
+</head>
+<body>
+ 
+<ul id="s1" class="connectedSortable">
+  <li class="ui-state-default locked" id="a_Item1">Item 1</li>
+  <li class="ui-state-default" id="a_Item2">Item 2</li>
+  <li class="ui-state-default" id="a_Item3">Item 3</li>
+  <li class="ui-state-default" id="a_Item4">Item 4</li>
+  <li class="ui-state-default" id="a_Item5">Item 5</li>
+</ul>
+ 
+<ul id="s2" class="connectedSortable">
+  <li class="ui-state-default locked" id=">Item 1</li>
+  <li class="ui-state-default">Item 2</li>
+  <li class="ui-state-default">Item 3</li>
+  <li class="ui-state-default">Item 4</li>
+  <li class="ui-state-default">Item 5</li>
+</ul>
+
+<ul id="s3" class="connectedSortable">
+ <li class="ui-state-default">Item 3</li>
+</ul>
+
+<div id="menulist"></div>
+ 
+</body>
+</html>
