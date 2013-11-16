@@ -13,3 +13,8 @@ In this Lab, some experiments were conducted to verify some laws like [Fitt's La
 * Hick Hyman's Law
 * Download Manager with UI involving Auditory responses in addition to the Visual ones.
 * Mobile Keypad to illustrate its UI and Usage.
+
+Run the Project
+===
+    Upload the files to a Web Server's Root folder supporting PHP (say Apache2)
+    Access the different experiments from the index.html file.
